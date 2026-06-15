@@ -1,0 +1,91 @@
+<style>
+  .search-pill {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #ddd;
+    border-radius: 40px;
+    padding: 4px 4px 4px 16px;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  }
+
+  .search-pill:focus-within {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+
+  .search-input {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent;
+    font-size: 0.95rem;
+    width: 220px;
+  }
+
+  .btn-search {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 40px;
+    padding: 0.45rem 1rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .btn-search:hover {
+    background-color: #d93645;
+    color: #fff;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings" style="text-decoration: none;">
+      <svg width="150" height="40" viewBox="0 0 280 72" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 0 C8 0 0 8 0 18 C0 28 18 44 18 44 C18 44 36 28 36 18 C36 8 28 0 18 0Z" fill="#FF385C"/>
+        <polygon points="10,16 18,9 26,16" fill="white"/>
+        <rect x="12" y="16" width="12" height="9" rx="1" fill="white"/>
+        <rect x="15" y="20" width="6" height="5" rx="0.5" fill="#FF385C"/>
+        <text x="44" y="30" font-family="sans-serif" font-size="26" font-weight="500">
+          <tspan fill="#FF385C">Airo</tspan><tspan fill="#222">Stay</tspan>
+        </text>
+      </svg>
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings"><b>Explore</b></a>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <!-- ✅ Only this part changed -->
+        <form class="d-flex" role="search">
+          <div class="search-pill">
+            <input class="form-control search-input" type="search" placeholder="Search destinations" aria-label="Search">
+            <button class="btn btn-search" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i> Search
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new"><b>AiroStay your home</b></a>
+        <% if(!currentUser) { %>
+          <a class="nav-link" href="/signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %>
+        <% if(currentUser) { %>
+          <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
