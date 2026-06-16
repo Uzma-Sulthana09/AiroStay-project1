@@ -13,7 +13,7 @@ router.get("/signup",(req,res) => {
     res.render("users/signup.ejs");
 });
 
-// ✅ No wrapAsync, use try/catch directly
+
 router.post("/signup", wrapAsync(userController.signup));
 
 router.get("/login",userController.renderLoginForm);
