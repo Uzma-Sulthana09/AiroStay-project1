@@ -1,15 +1,15 @@
 (() => {
     'use strict';
 
-    console.log("script.js loaded"); // ✅ Check if this appears in browser console
+    console.log("script.js loaded");
 
     const forms = document.querySelectorAll('.needs-validation');
 
-    console.log("Forms found:", forms.length); // ✅ Should print 1 or more
+    console.log("Forms found:", forms.length); 
 
     Array.from(forms).forEach((form) => {
         form.addEventListener('submit', event => {
-            console.log("Form submitted"); // ✅ Check if this fires on submit
+            console.log("Form submitted"); 
 
             if (!form.checkValidity()) {
                 event.preventDefault();
