@@ -17,12 +17,12 @@ const validateReview = (req, res, next) => {
 };
 
 const reviewController = require("../controllers/reviews.js");
-// ✅ was "/:id/reviews" — now just "/"
+
 router.post("/",
     validateReview,
     wrapAsync(reviewController.createReview));
 
-// ✅ was "/:id/reviews/:reviewId" — now just "/:reviewId"
+
 router.delete("/:reviewId",
     
     wrapAsync(reviewController.deleteReview));
